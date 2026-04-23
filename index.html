@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | NAO</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">TRIM engineerings</a>
+      <ul class="nav__links">
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#works">Works</a></li>
+      </ul>
+      <button class="nav__hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#works">Works</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Web Engineer &amp; Designer</p>
+      <h1 class="hero__title">Crafting<br>Digital<br>Experience</h1>
+      <div class="hero__scroll">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </div>
+    <div class="hero__deco">
+      <div class="hero__circle"></div>
+    </div>
+  </section>
+
+  <!-- Profile -->
+  <section class="section profile" id="profile">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__num">01</span>
+        <h2 class="section__title">Profile</h2>
+      </div>
+      <div class="profile__inner">
+        <div class="profile__image-wrap">
+          <div class="profile__image-bg"></div>
+          <img src="images/profile.png" alt="NAO" class="profile__image" onerror="this.style.display='none'">
+          <div class="profile__image-placeholder">
+            <span>Photo</span>
+          </div>
+        </div>
+        <div class="profile__body">
+          <h3 class="profile__name">NAO</h3>
+          <p class="profile__role">Web Engineer / Designer</p>
+          <p class="profile__bio">
+            作曲家・Webデザイナーとして20年以上のキャリアを持つクリエイター。音楽制作で培った感性とデザインスキルを活かし、美しく機能的なWebサイト・アプリを制作しています。
+          </p>
+          <ul class="profile__meta">
+            <li><span>Base</span>Osaka, Japan</li>
+            <li><span>Experience</span>20+ Years</li>
+            <li><span>Focus</span>Web / Design / Music</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__num">02</span>
+        <h2 class="section__title">Skills</h2>
+      </div>
+      <div class="skills__grid">
+
+        <div class="skill-card">
+          <div class="skill-card__icon">⬡</div>
+          <h3 class="skill-card__title">Frontend</h3>
+          <ul class="skill-card__list">
+            <li>HTML / CSS / JavaScript</li>
+            <li>React / Next.js</li>
+            <li>レスポンシブデザイン</li>
+            <li>Swiperアニメーション</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon">◈</div>
+          <h3 class="skill-card__title">Backend</h3>
+          <ul class="skill-card__list">
+            <li>Node.js / Express</li>
+            <li>PostgreSQL / SQLite</li>
+            <li>Supabase</li>
+            <li>REST API</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon">◎</div>
+          <h3 class="skill-card__title">Design</h3>
+          <ul class="skill-card__list">
+            <li>Webデザイン20年以上</li>
+            <li>Illustrator / Photoshop</li>
+            <li>UI / UX Design</li>
+            <li>ロゴ / ブランディング</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon">⬦</div>
+          <h3 class="skill-card__title">Deploy</h3>
+          <ul class="skill-card__list">
+            <li>Vercel</li>
+            <li>Render</li>
+            <li>GitHub Pages</li>
+            <li>GitHub / Git</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Works -->
+  <section class="section works" id="works">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__num">03</span>
+        <h2 class="section__title">Works</h2>
+      </div>
+      <div class="works__grid works__grid--2col">
+
+        <article class="work-card">
+          <div class="work-card__thumb">
+            <img src="images/fanform.png" alt="fanform" onerror="this.style.display='none'">
+            <div class="work-card__thumb-placeholder">fanform</div>
+            <div class="work-card__overlay">
+              <a href="#" class="work-card__link">View →</a>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <span class="work-card__tag">Web App</span>
+            <h3 class="work-card__title">fanform</h3>
+            <p class="work-card__desc">React / Node.js / Supabase</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card__thumb">
+            <img src="images/kakeibo.png" alt="kakeibo" onerror="this.style.display='none'">
+            <div class="work-card__thumb-placeholder">kakeibo</div>
+            <div class="work-card__overlay">
+              <a href="#" class="work-card__link">View →</a>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <span class="work-card__tag">Web App</span>
+            <h3 class="work-card__title">kakeibo</h3>
+            <p class="work-card__desc">React / Node.js / SQLite</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card__thumb">
+            <img src="images/login.png" alt="Login Form" onerror="this.style.display='none'">
+            <div class="work-card__thumb-placeholder">Login Form</div>
+            <div class="work-card__overlay">
+              <a href="#" class="work-card__link">View →</a>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <span class="work-card__tag">Web App</span>
+            <h3 class="work-card__title">Login Form</h3>
+            <p class="work-card__desc">Node.js / Express / bcrypt</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__logo">TRIM</p>
+      <p class="footer__copy">&copy; 2026 NAO. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
