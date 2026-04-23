@@ -17,6 +17,7 @@
   --text-secondary: #555550;
   --accent: #111110;
   --accent-light: #e8e8e4;
+  --color: #4DB8C8;
 
   --font-display: 'Syne', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -99,7 +100,7 @@ ul {
   font-weight: 800;
   font-size: 1.25rem;
   letter-spacing: 0.1em;
-  color: #000000 !important;
+  color: var(--color) !important;
 }
 
 .nav__links {
@@ -125,12 +126,12 @@ ul {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--text-primary);
+  background: var(--color);
   transition: width var(--transition);
 }
 
 .nav__links a:hover {
-  color: var(--text-primary);
+  color: var(--color);
 }
 
 .nav__links a:hover::after {
@@ -269,7 +270,7 @@ ul {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: var(--text-primary);
+  background: var(--color);
   animation: slide 2s ease-in-out infinite;
 }
 
@@ -327,7 +328,7 @@ ul {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: var(--mid-gray);
+  color: var(--color);
 }
 
 .section__title {
@@ -466,7 +467,7 @@ ul {
 .skill-card__icon {
   font-size: 1.5rem;
   margin-bottom: 24px;
-  color: var(--mid-gray);
+  color: var(--color);
 }
 
 .skill-card__title {
@@ -576,13 +577,13 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 12px 28px;
   border-radius: 100px;
-  transition: background var(--transition), border-color var(--transition);
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 
 .work-card__link:hover {
-  background: var(--white);
-  color: var(--text-primary);
-  border-color: var(--white);
+  background: var(--color);
+  color: var(--white);
+  border-color: var(--color);
 }
 
 .work-card__tag {
@@ -591,8 +592,8 @@ ul {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--dark-gray);
-  border: 1px solid var(--light-gray);
+  color: var(--color);
+  border: 1px solid var(--color);
   padding: 4px 10px;
   border-radius: 100px;
   margin-bottom: 10px;
