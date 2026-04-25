@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | NAO</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .contact {
+      background: var(--white);
+    }
+
+    .contact__inner {
+      max-width: 640px;
+    }
+
+    .contact__lead {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--text-secondary);
+      margin-bottom: 56px;
+    }
+
+    .form__group {
+      margin-bottom: 32px;
+    }
+
+    .form__label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dark-gray);
+      margin-bottom: 10px;
+    }
+
+    .form__label span {
+      color: var(--color);
+      margin-left: 2px;
+    }
+
+    .form__input,
+    .form__textarea {
+      width: 100%;
+      background: var(--off-white);
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      color: var(--text-primary);
+      transition: border-color var(--transition), background var(--transition);
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form__input:focus,
+    .form__textarea:focus {
+      border-color: var(--color);
+      background: var(--white);
+    }
+
+    .form__textarea {
+      resize: vertical;
+      min-height: 180px;
+      line-height: 1.7;
+    }
+
+    .form__button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--text-primary);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: var(--radius);
+      padding: 16px 36px;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .form__button:hover {
+      background: var(--color);
+      transform: translateY(-2px);
+    }
+
+    .form__button:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">TRIM engineerings</a>
+      <ul class="nav__links">
+        <li><a href="index.html#profile">Profile</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#works">Works</a></li>
+        <li><a href="contact.html" style="color: var(--color);">Contact</a></li>
+      </ul>
+      <button class="nav__hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="index.html#profile">Profile</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#works">Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Contact -->
+  <section class="section contact" style="padding-top: calc(var(--section-pad) + 72px);">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__num">04</span>
+        <h2 class="section__title">Contact</h2>
+      </div>
+      <div class="contact__inner">
+        <p class="contact__lead">お仕事のご依頼・ご相談はこちらからお気軽にどうぞ。<br>通常 2〜3 営業日以内にご返信いたします。</p>
+
+        <form action="https://formspree.io/f/xjgjlzaw" method="post">
+
+          <div class="form__group">
+            <label class="form__label" for="name">お名前<span>*</span></label>
+            <input
+              class="form__input"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="山田 太郎"
+              required
+            >
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="email">メールアドレス<span>*</span></label>
+            <input
+              class="form__input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              required
+            >
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="message">お問い合わせ内容<span>*</span></label>
+            <textarea
+              class="form__textarea"
+              id="message"
+              name="message"
+              placeholder="ご依頼内容やご質問をご記入ください。"
+              required
+            ></textarea>
+          </div>
+
+          <button class="form__button" type="submit">送信する →</button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__logo">TRIM</p>
+      <p class="footer__copy">&copy; 2026 NAO. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
