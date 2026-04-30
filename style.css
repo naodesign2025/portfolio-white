@@ -295,7 +295,7 @@ ul {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  border: 1px solid var(--light-gray);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   opacity: 0;
   animation: fadeIn 1.2s ease 0.8s forwards;
 }
@@ -305,7 +305,7 @@ ul {
   position: absolute;
   inset: 60px;
   border-radius: 50%;
-  border: 1px solid var(--light-gray);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .hero__circle::after {
@@ -313,7 +313,7 @@ ul {
   position: absolute;
   inset: 120px;
   border-radius: 50%;
-  border: 1px solid var(--light-gray);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 /* =============================================
