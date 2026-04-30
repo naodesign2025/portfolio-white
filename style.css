@@ -103,7 +103,7 @@ ul {
   color: var(--color) !important;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
 }
 
 .nav__logo-img {
