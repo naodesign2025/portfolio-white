@@ -107,8 +107,8 @@ ul {
 }
 
 .nav__logo-img {
-  height: 60px;
-  width: auto;
+  width: 120px;
+  height: auto;
   display: block;
 }
 
@@ -702,7 +702,7 @@ ul {
   }
 
   .nav__logo-img {
-    height: 48px;
+    width: 80px;
   }
 
   .nav__links {
