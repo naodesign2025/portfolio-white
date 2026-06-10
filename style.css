@@ -308,7 +308,7 @@ ul {
 .hero__deco {
   position: absolute;
   right: -5%;
-  top: 15%;
+  top: 5%;
   pointer-events: none;
   opacity: 0;
   animation: fadeIn 1.4s ease 0.8s forwards;
