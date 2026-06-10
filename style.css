@@ -245,7 +245,7 @@ ul {
 
 .hero__title {
   font-family: var(--font-main);
-  font-size: clamp(4rem, 9vw, 9.5rem);
+  font-size: clamp(6rem, 15vw, 18rem);
   font-weight: 600;
   line-height: 1.0;
   letter-spacing: -0.03em;
