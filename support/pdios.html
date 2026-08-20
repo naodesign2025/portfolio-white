@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDiOS サポート | 腹膜透析除水量記録アプリ</title>
+  <meta name="description" content="PDiOS（腹膜透析除水量記録アプリ）のサポートページ。使い方やお問い合わせはこちら。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg:             #0A0A0A;
+      --bg-subtle:      #111111;
+      --bg-card:        #141414;
+      --white:          #ffffff;
+      --text-primary:   #ffffff;
+      --text-secondary: #888888;
+      --text-muted:     #555555;
+      --accent:         #4DB8C8;
+      --accent-dim:     rgba(77, 184, 200, 0.15);
+      --border:         rgba(255, 255, 255, 0.08);
+      --font-main:      'Poppins', sans-serif;
+      --radius:         4px;
+      --transition:     0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ---- Nav ---- */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 28px 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+    }
+
+    .nav__logo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ---- Main ---- */
+    .main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 140px 40px 100px;
+    }
+
+    /* ---- Hero ---- */
+    .hero {
+      margin-bottom: 72px;
+    }
+
+    .hero__badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 2px;
+      padding: 4px 10px;
+      margin-bottom: 20px;
+    }
+
+    .hero__title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero__title span {
+      color: var(--accent);
+    }
+
+    .hero__sub {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* ---- Section ---- */
+    .section {
+      margin-bottom: 64px;
+    }
+
+    .section__label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .section__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--text-primary);
+    }
+
+    /* ---- Steps ---- */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .step__num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0;
+    }
+
+    .step__body {
+      flex: 1;
+    }
+
+    .step__heading {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    .step__text {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* ---- Contact ---- */
+    .contact-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .contact-box__label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .contact-box__email {
+      font-size: 1rem;
+      color: var(--accent);
+      word-break: break-all;
+    }
+
+    .contact-box__note {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+      line-height: 1.7;
+    }
+
+    /* ---- Divider ---- */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin-bottom: 64px;
+    }
+
+    /* ---- Footer ---- */
+    .footer {
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .footer a {
+      color: var(--text-muted);
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      .nav__inner {
+        padding: 0 24px;
+      }
+
+      .main {
+        padding: 120px 24px 80px;
+      }
+
+      .step {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        TRIM engineerings
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="main">
+
+    <!-- Hero -->
+    <div class="hero">
+      <span class="hero__badge">App Support</span>
+      <h1 class="hero__title">PDiOS<br><span>腹膜透析除水量</span>記録アプリ</h1>
+      <p class="hero__sub">
+        毎日の腹膜透析（PD）における除水量を手軽に記録・管理できる iOS アプリです。<br>
+        透析記録の蓄積・グラフ確認・データ共有をシンプルな操作でサポートします。
+      </p>
+    </div>
+
+    <!-- How to use -->
+    <section class="section">
+      <p class="section__label">How to use</p>
+      <h2 class="section__title">使い方</h2>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step__num">1</div>
+          <div class="step__body">
+            <p class="step__heading">記録を追加する</p>
+            <p class="step__text">
+              ホーム画面右上の「＋」ボタンをタップし、実施日・注入量・排液量を入力して保存します。
+              除水量（排液量 − 注入量）は自動で計算されます。
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num">2</div>
+          <div class="step__body">
+            <p class="step__heading">記録を確認する</p>
+            <p class="step__text">
+              一覧画面では日付・除水量の履歴を時系列で確認できます。
+              グラフタブに切り替えると、週・月単位のトレンドをグラフで表示します。
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num">3</div>
+          <div class="step__body">
+            <p class="step__heading">記録を編集・削除する</p>
+            <p class="step__text">
+              一覧の各行をタップすると編集画面が開きます。
+              左スワイプで削除ボタンが表示されます。
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step__num">4</div>
+          <div class="step__body">
+            <p class="step__heading">データをエクスポートする</p>
+            <p class="step__text">
+              設定画面の「エクスポート」から CSV 形式でデータを書き出せます。
+              医療機関への持参や、スプレッドシートでの集計にご活用ください。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Contact -->
+    <section class="section">
+      <p class="section__label">Contact</p>
+      <h2 class="section__title">お問い合わせ</h2>
+      <div class="contact-box">
+        <p class="contact-box__label">メールアドレス</p>
+        <p class="contact-box__email">
+          <!-- TODO: ここにメールアドレスを入力してください -->
+          your-email@example.com
+        </p>
+        <p class="contact-box__note">
+          アプリに関するご質問・ご不明点・不具合のご報告は上記メールアドレスまでお送りください。<br>
+          通常 2〜3 営業日以内にご返信いたします。
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 NAO / TRIM engineerings &nbsp;|&nbsp; <a href="/">trim-engineerings.com</a></p>
+  </footer>
+
+</body>
+</html>
