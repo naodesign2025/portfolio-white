@@ -66,10 +66,59 @@
       background: var(--white);
     }
 
+    .form__input--error,
+    .form__textarea--error {
+      border-color: #e05252 !important;
+      background: #fff8f8 !important;
+    }
+
     .form__textarea {
       resize: vertical;
       min-height: 180px;
       line-height: 1.7;
+    }
+
+    .form__error-msg {
+      display: none;
+      font-size: 0.75rem;
+      color: #e05252;
+      margin-top: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .form__error-msg.visible {
+      display: block;
+    }
+
+    .form__alert {
+      display: none;
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .form__alert.visible {
+      display: block;
+    }
+
+    .form__alert--error {
+      background: #fff2f2;
+      border: 1px solid #f5c6c6;
+      color: #c0392b;
+    }
+
+    .form__alert--success {
+      background: #f0faf4;
+      border: 1px solid #b2dfcc;
+      color: #1e7a4a;
+    }
+
+    .form__alert--rate-limit {
+      background: #fffbf0;
+      border: 1px solid #f5e4a0;
+      color: #7d6608;
     }
 
     .form__button {
@@ -87,16 +136,60 @@
       border-radius: var(--radius);
       padding: 16px 36px;
       cursor: pointer;
-      transition: background var(--transition), transform var(--transition);
+      transition: background var(--transition), transform var(--transition), opacity var(--transition);
     }
 
-    .form__button:hover {
+    .form__button:hover:not(:disabled) {
       background: var(--color);
       transform: translateY(-2px);
     }
 
-    .form__button:active {
+    .form__button:active:not(:disabled) {
       transform: translateY(0);
+    }
+
+    .form__button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .form__button--loading .btn-text {
+      display: none;
+    }
+
+    .form__button--loading .btn-loading {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-loading {
+      display: none;
+    }
+
+    .btn-spinner {
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: var(--white);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .char-counter {
+      font-size: 0.6875rem;
+      color: var(--mid-gray);
+      text-align: right;
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .char-counter.warn {
+      color: #e05252;
     }
   </style>
 </head>
@@ -141,7 +234,10 @@
       <div class="contact__inner">
         <p class="contact__lead">お仕事のご依頼・ご相談はこちらからお気軽にどうぞ。<br>通常 2〜3 営業日以内にご返信いたします。</p>
 
-        <form action="https://formspree.io/f/xjgjlzaw" method="post">
+        <!-- アラート（rate limit / 送信エラー / 送信成功） -->
+        <div id="form-alert" class="form__alert" role="alert" aria-live="polite"></div>
+
+        <form id="contact-form" novalidate>
 
           <div class="form__group">
             <label class="form__label" for="name">お名前<span>*</span></label>
@@ -151,8 +247,10 @@
               id="name"
               name="name"
               placeholder="山田 太郎"
-              required
+              maxlength="100"
+              autocomplete="name"
             >
+            <p class="form__error-msg" id="name-error" role="alert"></p>
           </div>
 
           <div class="form__group">
@@ -163,8 +261,10 @@
               id="email"
               name="email"
               placeholder="example@email.com"
-              required
+              maxlength="254"
+              autocomplete="email"
             >
+            <p class="form__error-msg" id="email-error" role="alert"></p>
           </div>
 
           <div class="form__group">
@@ -174,11 +274,19 @@
               id="message"
               name="message"
               placeholder="ご依頼内容やご質問をご記入ください。"
-              required
+              maxlength="5000"
             ></textarea>
+            <div class="char-counter" id="char-counter">0 / 5000</div>
+            <p class="form__error-msg" id="message-error" role="alert"></p>
           </div>
 
-          <button class="form__button" type="submit">送信する →</button>
+          <button class="form__button" type="submit" id="submit-btn">
+            <span class="btn-text">送信する →</span>
+            <span class="btn-loading">
+              <span class="btn-spinner"></span>
+              送信中...
+            </span>
+          </button>
 
         </form>
       </div>
@@ -194,5 +302,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="contact-form.js"></script>
 </body>
 </html>

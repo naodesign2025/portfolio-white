@@ -308,7 +308,7 @@ ul {
 .hero__deco {
   position: absolute;
   right: -5%;
-  top: 5%;
+  top: -15%;
   pointer-events: none;
   opacity: 0;
   animation: fadeIn 1.4s ease 0.8s forwards;
@@ -631,6 +631,17 @@ ul {
   border-color: var(--accent);
 }
 
+.work-card__tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.work-card__tags .work-card__tag {
+  margin-bottom: 0;
+}
+
 .work-card__tag {
   display: inline-block;
   font-family: var(--font-main);
@@ -643,6 +654,12 @@ ul {
   padding: 3px 10px;
   border-radius: 100px;
   margin-bottom: 10px;
+}
+
+.work-card__tag--appstore {
+  color: #fff;
+  background: rgba(77, 184, 200, 0.15);
+  border-color: rgba(77, 184, 200, 0.4);
 }
 
 .work-card__title {
